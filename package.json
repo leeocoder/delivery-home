@@ -1,0 +1,36 @@
+{
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^17.0.30",
+    "prisma": "^3.13.0",
+    "sucrase": "^3.21.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.13.0",
+    "bcrypt": "^5.0.1",
+    "bson": "^4.6.3",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "name": "delivery-home",
+  "description": "Backend of a delivey app, Prisma, Node, JWT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "sucrase src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeo-dev/delivery-home.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leeo-dev/delivery-home/issues"
+  },
+  "homepage": "https://github.com/leeo-dev/delivery-home#readme"
+}
