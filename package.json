@@ -18,7 +18,7 @@
   },
   "name": "delivery-home",
   "description": "Backend of a delivery app, Prisma, Node, JWT",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/index.ts"
