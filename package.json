@@ -5,7 +5,7 @@
     "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.30",
     "prisma": "^3.13.0",
-    "sucrase": "^3.21.0",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.4"
   },
   "dependencies": {
@@ -20,7 +20,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "sucrase src/index.ts"
+    "start": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/index.ts"
   },
   "repository": {
     "type": "git",
