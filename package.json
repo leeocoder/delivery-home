@@ -17,7 +17,7 @@
     "jsonwebtoken": "^8.5.1"
   },
   "name": "delivery-home",
-  "description": "Backend of a delivey app, Prisma, Node, JWT",
+  "description": "Backend of a delivery app, Prisma, Node, JWT",
   "version": "1.1.0",
   "main": "index.js",
   "scripts": {

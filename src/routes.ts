@@ -9,5 +9,6 @@ const authenticateUserController = new AuthenticateUserController();
 
 routes.post("/client", createClienteController.handle);
 routes.post("/deliveryman", createDeliverymanUseCase.handle);
-routes.post("/auth", authenticateUserController.handle);
+routes.post("/auth/client", authenticateUserController.handle);
+routes.post("/auth/deliveryman", authenticateUserController.handle);
 export { routes };

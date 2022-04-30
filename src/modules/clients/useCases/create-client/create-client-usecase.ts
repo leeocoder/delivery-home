@@ -7,6 +7,7 @@ type CreateClientParams = {
 };
 export class CreateClienteUseCase {
   async execute({ username, password }: CreateClientParams) {
+    console.log(username);
     const clientExists = await prisma.clients.findFirst({
       where: { username: { mode: "insensitive" } },
     });
