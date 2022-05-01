@@ -1,6 +1,4 @@
-import { Response } from "express";
-import { Request } from "express";
-import { DeliveryParam } from "../../../../protocols/delivery-param";
+import { Request, Response } from "express";
 import { CreateDeliveryUseCase } from "./create-delivery-usecase";
 
 export class CreateDeliveryController {

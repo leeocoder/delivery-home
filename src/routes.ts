@@ -1,3 +1,4 @@
+import { FindAllAvailableController } from "./modules/deliveries/usecases/find-all-available/find-all-available-controller";
 import { AuthenticateDeliverymanController } from "./modules/account/authenticate-deliveryman/authenticate-deliveryman-controller";
 import { CreateDeliveryController } from "./modules/deliveries/usecases/create-delivery/create-delivery-controller";
 import { Router } from "express";
@@ -13,11 +14,14 @@ const authenticateUserController = new AuthenticateUserController();
 //prettier-ignore
 const authenticateDeliverymanController = new AuthenticateDeliverymanController();
 const createDeliveryController = new CreateDeliveryController();
+const findAllAvailableController = new FindAllAvailableController();
 
 routes.post("/client", createClienteController.handle);
 routes.post("/deliveryman", createDeliverymanController.handle);
 routes.post("/auth/client", authenticateUserController.handle);
 routes.post("/auth/deliveryman", authenticateDeliverymanController.handle);
 //prettier-ignore
-routes.post("/deliveries", ensureAuthenticateClient, createDeliveryController.handle);
+routes.post("/delivery", ensureAuthenticateClient, createDeliveryController.handle);
+//prettier-ignore
+routes.get("/delivery/available", findAllAvailableController.handle);
 export { routes };
