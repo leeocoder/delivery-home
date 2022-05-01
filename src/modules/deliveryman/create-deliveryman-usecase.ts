@@ -6,7 +6,7 @@ import { hash } from "bcrypt";
 export class CreateDeliverymanUseCase {
   async execute({ username, password }: UserParam) {
     const deliverymanExists = await prisma.deliveryman.findFirst({
-      where: { username: { mode: "insensitive" } },
+      where: { username: { equals: username, mode: "insensitive" } },
     });
     if (deliverymanExists) throw new UsernameAlreadyInUse();
     const hashPassword = await hash(password, 10);
