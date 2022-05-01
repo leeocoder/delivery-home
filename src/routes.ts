@@ -6,6 +6,7 @@ import { AuthenticateUserController } from "./modules/account/authenticate-user/
 import { CreateClienteController } from "./modules/clients/useCases/create-client/create-client-controller";
 import { CreateDeliverymanController } from "./modules/deliveryman/create-deliveryman-controller";
 import { ensureAuthenticateClient } from "./middlewares/ensure-authenticate-client";
+import { ensureAuthenticateDeliveryman } from "./middlewares/ensure-authenticate-deliveryman";
 const routes = Router();
 
 const createClienteController = new CreateClienteController();
@@ -23,5 +24,5 @@ routes.post("/auth/deliveryman", authenticateDeliverymanController.handle);
 //prettier-ignore
 routes.post("/delivery", ensureAuthenticateClient, createDeliveryController.handle);
 //prettier-ignore
-routes.get("/delivery/available", findAllAvailableController.handle);
+routes.get("/delivery/available", ensureAuthenticateDeliveryman, findAllAvailableController.handle);
 export { routes };

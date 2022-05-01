@@ -17,7 +17,7 @@ export class AuthenticateDeliverymanUseCase {
     const passwordMatch = await compare(password, deliveryman.password);
     if (!passwordMatch) throw new UnauthorizedError();
 
-    const token = sign({ username }, env.JST_SECRET, {
+    const token = sign({ username }, env.JST_SECRET_DELIVERYMAN, {
       subject: deliveryman.id,
       expiresIn: "1d",
     });

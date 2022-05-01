@@ -17,7 +17,7 @@ export class AuthenticateUserUseCase {
     const passwordMatch = await compare(password, client.password);
     if (!passwordMatch) throw new UnauthorizedError();
 
-    const token = sign({ username }, env.JST_SECRET, {
+    const token = sign({ username }, env.JST_SECRET_CLIENT, {
       subject: client.id,
       expiresIn: "1d",
     });
