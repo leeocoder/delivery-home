@@ -3,6 +3,7 @@ import { UnauthorizedError } from "../../../errors";
 import { UserParam } from "../../../protocols/UserParam";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
+import env from "../../../env";
 
 export class AuthenticateDeliverymanUseCase {
   async execute({ username, password }: UserParam) {
@@ -16,7 +17,7 @@ export class AuthenticateDeliverymanUseCase {
     const passwordMatch = await compare(password, deliveryman.password);
     if (!passwordMatch) throw new UnauthorizedError();
 
-    const token = sign({ username }, process.env.JWT_SECRET || "any_secret", {
+    const token = sign({ username }, env.JST_SECRET, {
       subject: deliveryman.id,
       expiresIn: "1d",
     });

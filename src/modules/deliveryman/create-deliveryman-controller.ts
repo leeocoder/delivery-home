@@ -1,7 +1,7 @@
 import { CreateDeliverymanUseCase } from "./create-deliveryman-usecase";
 import { Request, Response } from "express";
 
-export class CreateDeliveryController {
+export class CreateDeliverymanController {
   async handle(request: Request, response: Response) {
     const { username, password } = request.body;
     const createDeliveryUseCase = new CreateDeliverymanUseCase();

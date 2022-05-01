@@ -8,7 +8,6 @@ export class CreateDeliverymanUseCase {
     const deliverymanExists = await prisma.deliveryman.findFirst({
       where: { username: { mode: "insensitive" } },
     });
-    console.log(deliverymanExists);
     if (deliverymanExists) throw new UsernameAlreadyInUse();
     const hashPassword = await hash(password, 10);
     const delivery = await prisma.deliveryman.create({
